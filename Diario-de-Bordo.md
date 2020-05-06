@@ -4,3 +4,5 @@
 ###### 2 - Alterados os nomes dos pacotes java e estruturas de diretórios do projeto para manter o padrão PIX;
 ###### 3 - Alteradas as informações de manifesto do projto POM.XML para manter o padrão PIX;
 ###### 4 - Adicionada esta primeira versão alterada para o GitHub PIX.
+
+![Exemplo](https://github.com/PadraoiX/QWCFPFileExplorer/blob/master/ExemploTelaProjeto.png)
