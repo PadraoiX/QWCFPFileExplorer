@@ -9,3 +9,9 @@ Interface WEB de usuários, que permita entre outros, navegar e gerir objetos pe
 ###### 2 - Alterados os nomes dos pacotes java e estruturas de diretórios do projeto para manter o padrão PIX;
 ###### 3 - Alteradas as informações de manifesto do projto POM.XML para manter o padrão PIX;
 ###### 4 - Adicionada esta primeira versão alterada para o GitHub PIX.
+###### 5 - O build não funcionou pelo Eclipse. Só na mão, com:
+set JAVA_HOME=D:\Bin\Java\jdk1.8.0_45
+D:\Bin\maven-3.6.3\bin\mvn.cmd package
+
+O Porquê continua um mistério. Entretanto, eu ainda acredito que a T.I. é uma ciência exata.
+
