@@ -15,3 +15,7 @@ D:\Bin\maven-3.6.3\bin\mvn.cmd package
 
 O Porquê continua um mistério. Entretanto, eu ainda acredito que a T.I. é uma ciência exata.
 
+A resposta foi atualize o eclipse inteiro, isto é, jogue fora a versão usada, baixe a mais nova e seja feliz.
+
+###### 6 - Alterações nas configurações do Eclipse para usar JDK no lugar de JRE para este projeto.
+

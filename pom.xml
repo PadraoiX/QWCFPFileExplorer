@@ -70,7 +70,7 @@
     <!-- FIM Adicionado pelo Anderson 7/5/20 -->
        
     <dependencies>
-    <!-- Adicionado pelo Anderson 7/5/20 -->
+    	<!-- Adicionado pelo Anderson 7/5/20 -->
 		<!-- https://mvnrepository.com/artifact/javax.el/javax.el-api -->
 		<dependency>
 		    <groupId>javax.el</groupId>
@@ -92,7 +92,7 @@
 		    <artifactId>jsf-impl</artifactId>
 		    <version>2.2.14</version>
 		</dependency>
-    <!-- FIM Adicionado pelo Anderson 7/5/20 -->
+    	<!-- FIM Adicionado pelo Anderson 7/5/20 -->
     
         <dependency>
             <groupId>junit</groupId>
