@@ -4,6 +4,10 @@
 
 ![ScreenShot](http://i.imgur.com/GYMHIqv.png)
 
+### Fork do projeto original
+
+	DragonZone (https://github.com/dragonzone) 
+	Andy Do (long.c.do@gmail.com)	
 
 This project uses Spring Framework, Spring Security, JSF 2.1 + PrimeFaces 5.
 It allows you, depending on your role, to view all the directory and files

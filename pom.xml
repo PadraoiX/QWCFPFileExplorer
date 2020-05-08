@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dragonzone</groupId>
-    <artifactId>DragonZone-WebExplorer</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>br.com.pix.qwcfp</groupId>
+    <artifactId>QWCFPFileExplorer</artifactId>
+    <version>1.0.0.2</version>
     <packaging>war</packaging>
     <url>${application.url}</url>
 
-    <name>webExplorer</name>
+    <name>QWCFPFileExplorer</name>
     
     <licenses>
         <license>
@@ -23,24 +23,24 @@
     </issueManagement>
     <scm>
         <url>${application.url}</url>
-        <connection>scm:https://github.com/dragonzone/DragonZone-WebExplorer.git</connection>
-        <developerConnection>scm:https://github.com/dragonzone/DragonZone-WebExplorer.git</developerConnection>
+        <connection>scm:https://github.com/PadraoiX/QWCFPFileExplorer.git</connection>
+        <developerConnection>scm:https://github.com/PadraoiX/QWCFPFileExplorer.git</developerConnection>
     </scm>
     <developers>
         <developer>
-            <email>long.c.do@gmail.com</email>
-            <name>Andy Do</name>
-            <url>https://github.com/dragonzone</url>
-            <id>DragonZone</id>
+            <email>anderson@pix.com.br</email>
+            <name>Anderson Oliveira</name>
+            <url>https://github.com/PadraoiX/QWCFPFileExplorer</url>
+            <id>QWCFPFileExplorer</id>
         </developer>
     </developers>
     
     <properties>
-        <application.url>https://github.com/dragonzone/DragonZone-WebExplorer</application.url>
+        <application.url>https://github.com/PadraoiX/QWCFPFileExplorer</application.url>
         <application.name>${project.artifactId}</application.name>
         <application.version>${project.version}</application.version>
-        <development.team>DragonZone</development.team>
-        <contact.email>longcdo@gmail.com</contact.email>
+        <development.team>PIX</development.team>
+        <contact.email>anderson</contact.email>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <glassfish.javax.faces.version>2.1.29</glassfish.javax.faces.version>
@@ -364,4 +364,5 @@
             </resource>
         </resources>
     </build>
+    <description>Interface WEB de usuários, que permita entre outros, navegar e gerir objetos persistidos no QWCFP. Este módulo depende dum servidor de aplicação J2EE e faz uso de JSF 2.0 + PrimeFAces 5.2 + Web Service SOAP 1.1 + QWCFPWebService, acessando o um dos repositórios QWCFP na rede. Partindo da versão 1.0.0.2 os pacotes passam a referenciar QWCFP.</description>
 </project>
