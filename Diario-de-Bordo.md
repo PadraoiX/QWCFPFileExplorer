@@ -19,3 +19,10 @@ A resposta foi atualize o eclipse inteiro, isto é, jogue fora a versão usada, 
 
 ###### 6 - Alterações nas configurações do Eclipse para usar JDK no lugar de JRE para este projeto.
 
+### 2020-05-08 - Anderson Silva: Publicada a primeira versão do DiscoVirtual DEMO.
+Conforme prometido, na 1ª hora desta Sexta aí está o demo do QWCFPFileExplorer na sua versão original, acessando o sistema de arquivos local na máquina **http://192.168.186.58:8080/DragonZone-WebExplorer-1.0-SNAPSHOT/**. Portanto, muito (CUIDADO). 
+A senha dos usuários para a demo são: *admin/admin123*, *user/user123* e *contributor=contrib123*
+
+###### 1 - Farei um branch desta versão original e na próxima o WAR já se chamará QWCFPFileExplorer.war
+
+
