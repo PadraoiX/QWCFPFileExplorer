@@ -36,7 +36,6 @@
     </developers>
     
     <properties>
-        <application.url>https://qwcfp.pix.com.br/QWCFP/</application.url>
         <application.url>https://github.com/dragonzone/DragonZone-WebExplorer</application.url>
         <application.name>${project.artifactId}</application.name>
         <application.version>${project.version}</application.version>
