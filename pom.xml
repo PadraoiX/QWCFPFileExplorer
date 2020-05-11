@@ -4,7 +4,7 @@
 
     <groupId>br.com.pix.qwcfp</groupId>
     <artifactId>QWCFPFileExplorer</artifactId>
-    <version>1.0.0.2</version>
+    <version>1.0.0.3</version>
     <packaging>war</packaging>
     <url>${application.url}</url>
 
@@ -45,7 +45,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <glassfish.javax.faces.version>2.1.29</glassfish.javax.faces.version>
         <primefaces.version>5.2</primefaces.version>
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <!--  <spring.version>4.1.6.RELEASE</spring.version> -->
+        <spring.version>4.3.27.RELEASE</spring.version>
         <spring.security.version>3.2.5.RELEASE</spring.security.version>
         <logback.version>1.1.2</logback.version>
         <slf4j.version>1.7.7</slf4j.version>
