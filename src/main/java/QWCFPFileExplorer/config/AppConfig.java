@@ -35,7 +35,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "com.dragonzone.spring.*" })
+@ComponentScan({ "QWCFPFileExplorer.spring.*" })
 @Import({ SecurityConfig.class })
 public class AppConfig {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AppConfig.class);
@@ -102,8 +102,9 @@ public class AppConfig {
 		List<Resource> resourceList = new ArrayList<>();
 		resourceList.add(new ClassPathResource("resources.properties"));
 		resourceList.add(new ClassPathResource("webexplorer.properties"));
+		resourceList.add(new FileSystemResource("G:\\webexplorer.properties"));
 		resourceList.add(new FileSystemResource("/opt/config/webexplorer.properties"));
-		
+		logger.info( "Passei em: AppConfig.getResourceList com resourceList=" + resourceList.toString());
 		resourceExists(resourceList);
 		
 		return resourceList;
