@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component(value = "appProperties")
+@Component(value = "AppProperties")
 public class AppProperties {
     private final static String PATH_SEPARATOR = ";"; 
     private List<String> defaultPathList;

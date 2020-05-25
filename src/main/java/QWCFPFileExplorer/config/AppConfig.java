@@ -103,7 +103,7 @@ public class AppConfig {
 		resourceList.add(new ClassPathResource("resources.properties"));
 		resourceList.add(new ClassPathResource("webexplorer.properties"));
 		resourceList.add(new FileSystemResource("G:\\webexplorer.properties"));
-		resourceList.add(new FileSystemResource("/opt/config/webexplorer.properties"));
+		// resourceList.add(new FileSystemResource("/opt/config/webexplorer.properties"));
 		logger.info( "Passei em: AppConfig.getResourceList com resourceList=" + resourceList.toString());
 		resourceExists(resourceList);
 		
@@ -135,6 +135,8 @@ public class AppConfig {
 	 */
 	@PostConstruct
 	public void loadEncryptedProperties() {
+		logger.warn("Passei aqui em loadEncryptedProperties");
+
 		Properties properties = new Properties();
 		List<Resource> resourceList = getResourceList();
 		for (Resource resource : resourceList) {

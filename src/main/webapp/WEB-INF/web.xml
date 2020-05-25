@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <!-- Incluído pelo Anderson 25/05/2020 -->
+    <!-- Marreta desgraçada para forçar um contexto que não seja o onome
+         do WAR funcionar tanto no ECLIPSE quanto no JBOSS  na hora do deploy 
+    -->
+	<env-entry>
+		<description>web app</description>	
+		<env-entry-name>appCxtRoot</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>		
+		<env-entry-value>QWCFPFileExplorer</env-entry-value>
+	</env-entry>
     <!-- Incluído pelo Anderson 24/05/2020 -->
 	    <context-param>
 	    	<param-name>contextConfigLocation</param-name>
@@ -7,15 +20,14 @@
 		        /WEB-INF/classes/applicationContext.xml
 		    </param-value>
 		</context-param>
+	    <context-param>
+	        <param-name>contextConfigLocation</param-name>
+	        <param-value>
+	            classpath:applicationContext*.xml
+	        </param-value>
+	    </context-param>
     <!-- FIM Incluído pelo Anderson 24/05/2020 -->
-	<!-- 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:applicationContext*.xml
-        </param-value>
-    </context-param>
-    -->
+
     <listener>
         <listener-class>
             org.springframework.web.context.ContextLoaderListener
@@ -71,6 +83,20 @@
     </filter-mapping>
     <!--Used for JSF 2.1 OR BELOW - ENDS -->   
 
+    <!--Anderson - 25/05/2020 - 
+        Adicionado para atender as exigências do Spring Security usado
+        nesta aplicação.
+		<filter>
+			<filter-name>springSecurityFilterChain</filter-name>
+			<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		</filter>
+		
+		<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+    -->   
+    <!--FIM Anderson - 25/05/2020 - Adicionado para exigências do Spring -->   
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -80,6 +106,7 @@
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
+		<url-pattern>*.xhtml</url-pattern> 
     </servlet-mapping>
     
     <session-config>
@@ -101,30 +128,50 @@
         <location>/error/viewExpired.jsf</location>
     </error-page>
     
+    <!--Anderson - 25/05/2020 - 
+	    Incluindo outro XML de configuração neste ponto com as configurações de 
+	    MIME-TYPE conhecidas e então adicionadas as demais exclusivas para este 
+	    projeto a seguir. Não isso não é macumba é:
+		
+			In JSR 315: Java Servlet 3.0 Specification, web-fragment.xml is 
+			introduced for pluggability of library jars which are packaged under 
+			WEB-INF/lib. The content of web.xml and web-fragment.xml are almost 
+			the same. One can define servlets, filters and listeners there. One can 
+			also specify metadata-complete=true in a given web-fragment.xml. 
+			In the latter case, the annotation processing of classes in that jar 
+			would be skipped. With web-fragment.xml, library jars can be 
+			self-contained and provide web related metadata		
+    -->
+    <absolute-ordering>
+         <name>fragment1</name>
+    </absolute-ordering>
+    
+    <!-- Removidos pois já se encontram no fragmento 
+         de configuração logo acima
+         
+	    <mime-mapping>
+	        <extension>eot</extension>
+	        <mime-type>application/vnd.ms-fontobject</mime-type>
+	    </mime-mapping>
+	    
+	    <mime-mapping>
+	        <extension>ttf</extension>
+	        <mime-type>application/octet-stream</mime-type>
+	    </mime-mapping>
+	    <mime-mapping>
+	        <extension>woff</extension>
+	        <mime-type>application/x-font-woff</mime-type>
+	    </mime-mapping>
+    --> 
     <!--Need to define these mime for Font Awesome-->
-    <mime-mapping>
-        <extension>eot</extension>
-        <mime-type>application/vnd.ms-fontobject</mime-type>
-    </mime-mapping>
     <mime-mapping>
         <extension>eot?#iefix</extension>
         <mime-type>application/vnd.ms-fontobject</mime-type>
     </mime-mapping>
-    <mime-mapping>
-        <extension>ttf</extension>
-        <mime-type>application/octet-stream</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>svg</extension>
-        <mime-type>image/svg+xml</mime-type>
-    </mime-mapping>
+
     <mime-mapping>
         <extension>svg#fontawesomeregular</extension>
         <mime-type>image/svg+xml</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>woff</extension>
-        <mime-type>application/x-font-woff</mime-type>
     </mime-mapping>
     
 </web-app>
