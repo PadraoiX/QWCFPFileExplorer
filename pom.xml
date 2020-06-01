@@ -70,162 +70,179 @@
 	    <!-- FIM Adicionado pelo Anderson 7/5/20 -->
     </repositories> 
        
-    <dependencies>
-    	<!-- Adicionado pelo Anderson 7/5/20 -->
-		<!-- https://mvnrepository.com/artifact/javax.el/javax.el-api -->
-		<dependency>
-		    <groupId>javax.el</groupId>
-		    <artifactId>javax.el-api</artifactId>
-		</dependency>
+    	<dependencies>
+    		<dependency>
+    			<groupId>javax.faces</groupId>
+    			<artifactId>jsf-api</artifactId>
+    			<version>2.2.20</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>com.sun.faces</groupId>
+    			<artifactId>jsf-impl</artifactId>
+    			<version>2.2.20</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.jboss.modules</groupId>
+    			<artifactId>jboss-modules</artifactId>
+    			<version>1.5.1.Final</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>junit</groupId>
+    			<artifactId>junit</artifactId>
+    			<version>4.10</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-test</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>javax</groupId>
+    			<artifactId>javaee-web-api</artifactId>
+    			<version>7.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>javax</groupId>
+    			<artifactId>javaee-api</artifactId>
+    			<version>8.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>ch.qos.logback</groupId>
+    			<artifactId>logback-classic</artifactId>
+    			<version>${logback.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>ch.qos.logback</groupId>
+    			<artifactId>logback-core</artifactId>
+    			<version>${logback.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.slf4j</groupId>
+    			<artifactId>slf4j-api</artifactId>
+    			<version>${slf4j.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-core</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-web</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-webmvc</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework.security</groupId>
+    			<artifactId>spring-security-web</artifactId>
+    			<version>${spring.security.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework.security</groupId>
+    			<artifactId>spring-security-config</artifactId>
+    			<version>${spring.security.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.jasypt</groupId>
+    			<artifactId>jasypt</artifactId>
+    			<version>1.9.2</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.jasypt</groupId>
+    			<artifactId>jasypt-spring31</artifactId>
+    			<version>1.9.2</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.jasypt</groupId>
+    			<artifactId>jasypt-springsecurity3</artifactId>
+    			<version>1.9.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.glassfish</groupId>
+    			<artifactId>javax.faces</artifactId>
+    			<version>${glassfish.javax.faces.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.primefaces</groupId>
+    			<artifactId>primefaces</artifactId>
+    			<version>${primefaces.version}</version>
+    		</dependency>
+    		<!--  Treta -->
+    		<dependency>
+    			<groupId>org.apache.commons</groupId>
+    			<artifactId>commons-lang3</artifactId>
+    			<version>3.3.2</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>commons-io</groupId>
+    			<artifactId>commons-io</artifactId>
+    			<version>2.4</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>commons-fileupload</groupId>
+    			<artifactId>commons-fileupload</artifactId>
+    			<version>1.3.1</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>com.mpatric</groupId>
+    			<artifactId>mp3agic</artifactId>
+    			<version>0.8.2</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>commons-codec</groupId>
+    			<artifactId>commons-codec</artifactId>
+    			<version>1.9</version>
+    		</dependency>
 
-		
-		<!-- https://mvnrepository.com/artifact/org.glassfish/javax.el -->
-		<dependency>
-		    <groupId>org.glassfish</groupId>
-		    <artifactId>javax.el</artifactId>
-		</dependency>
-		
-		<dependency>
-		    <groupId>javax.faces</groupId>
-		    <artifactId>javax.faces-api</artifactId>
-		    <scope>provided</scope>
-		</dependency>
-
-		<dependency>
-		    <groupId>org.jboss.modules</groupId>
-		    <artifactId>jboss-modules</artifactId>
-		</dependency>
-		
-    	<!-- FIM Adicionado pelo Anderson 7/5/20 -->
-    
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-        <!-- logging -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-
-        <!-- Spring dependencies -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
- 
-        <!-- Spring Security -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.jasypt</groupId>
-            <artifactId>jasypt</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>org.jasypt</groupId>
-			<artifactId>jasypt-spring31</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jasypt</groupId>
-			<artifactId>jasypt-springsecurity3</artifactId>
-		</dependency>
-	        
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.faces</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.primefaces.themes</groupId>
-            <artifactId>bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-        </dependency>
-        
-        <!--Used for JSF 2.1 OR BELOW FOR FILEUPLOAD - BEGIN-->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <!--Used for JSF 2.1 OR BELOW FOR FILEUPLOAD - ENDS-->
-        
-        <dependency>
-            <groupId>com.mpatric</groupId>
-            <artifactId>mp3agic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-        </dependency>
-    </dependencies>
+    		<dependency>
+    			<groupId>javax.faces</groupId>
+    			<artifactId>javax.faces-api</artifactId>
+    			<version>2.2</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>javax.el</groupId>
+    			<artifactId>javax.el-api</artifactId>
+    			<version>3.0.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.glassfish</groupId>
+    			<artifactId>javax.el</artifactId>
+    			<version>3.0.0</version>
+    		</dependency>
+    	</dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.5</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
                 </configuration>
             </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
+                <version>2.6</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
@@ -235,15 +252,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.6</version>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <!-- to enable testing, comment out below -->
-                <version>2.18</version>
-                <configuration>
-                    <skipTests>${skipTests}</skipTests>
-                </configuration>
-            </plugin>
+
 
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
@@ -348,153 +357,5 @@
     </build>
     <description>Interface WEB de usuários, que permita entre outros, navegar e gerir objetos persistidos no QWCFP. Este módulo depende dum servidor de aplicação J2EE e faz uso de JSF 2.0 + PrimeFAces 5.2 + Web Service SOAP 1.1 + QWCFPWebService, acessando o um dos repositórios QWCFP na rede. Partindo da versão 1.0.0.2 os pacotes passam a referenciar QWCFP.</description>
     <dependencyManagement>
-    	<dependencies>
-    		<dependency>
-    			<groupId>javax.faces</groupId>
-    			<artifactId>jsf-api</artifactId>
-    			<version>2.2.20</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>com.sun.faces</groupId>
-    			<artifactId>jsf-impl</artifactId>
-    			<version>2.2.20</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jboss.modules</groupId>
-    			<artifactId>jboss-modules</artifactId>
-    			<version>1.5.1.Final</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>junit</groupId>
-    			<artifactId>junit</artifactId>
-    			<version>4.10</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-test</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>javax</groupId>
-    			<artifactId>javaee-web-api</artifactId>
-    			<version>7.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>javax</groupId>
-    			<artifactId>javaee-api</artifactId>
-    			<version>8.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>ch.qos.logback</groupId>
-    			<artifactId>logback-classic</artifactId>
-    			<version>${logback.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>ch.qos.logback</groupId>
-    			<artifactId>logback-core</artifactId>
-    			<version>${logback.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.slf4j</groupId>
-    			<artifactId>slf4j-api</artifactId>
-    			<version>${slf4j.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-core</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-web</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-webmvc</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework.security</groupId>
-    			<artifactId>spring-security-web</artifactId>
-    			<version>${spring.security.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework.security</groupId>
-    			<artifactId>spring-security-config</artifactId>
-    			<version>${spring.security.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jasypt</groupId>
-    			<artifactId>jasypt</artifactId>
-    			<version>1.9.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jasypt</groupId>
-    			<artifactId>jasypt-spring31</artifactId>
-    			<version>1.9.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jasypt</groupId>
-    			<artifactId>jasypt-springsecurity3</artifactId>
-    			<version>1.9.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.glassfish</groupId>
-    			<artifactId>javax.faces</artifactId>
-    			<version>${glassfish.javax.faces.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.primefaces</groupId>
-    			<artifactId>primefaces</artifactId>
-    			<version>${primefaces.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.primefaces.themes</groupId>
-    			<artifactId>bootstrap</artifactId>
-    			<version>1.0.10</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.apache.commons</groupId>
-    			<artifactId>commons-lang3</artifactId>
-    			<version>3.3.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>commons-io</groupId>
-    			<artifactId>commons-io</artifactId>
-    			<version>2.4</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>commons-fileupload</groupId>
-    			<artifactId>commons-fileupload</artifactId>
-    			<version>1.3.1</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>com.mpatric</groupId>
-    			<artifactId>mp3agic</artifactId>
-    			<version>0.8.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>commons-codec</groupId>
-    			<artifactId>commons-codec</artifactId>
-    			<version>1.9</version>
-    		</dependency>
-
-    		<dependency>
-    			<groupId>javax.faces</groupId>
-    			<artifactId>javax.faces-api</artifactId>
-    			<version>2.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>javax.el</groupId>
-    			<artifactId>javax.el-api</artifactId>
-    			<version>3.0.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.glassfish</groupId>
-    			<artifactId>javax.el</artifactId>
-    			<version>3.0.0</version>
-    		</dependency>
-    	</dependencies>
     </dependencyManagement>
 </project>

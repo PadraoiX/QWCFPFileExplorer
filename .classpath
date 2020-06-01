@@ -43,5 +43,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="libs/primefaces-5.2.jar"/>
 	<classpathentry kind="lib" path="libs/primefaces-extensions-3.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/bootstrap-1.0.10.jar"/>
+	<classpathentry kind="lib" path="libs/all-themes-1.0.10.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
