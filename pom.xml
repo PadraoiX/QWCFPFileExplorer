@@ -1,361 +1,395 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.pix.qwcfp</groupId>
-    <artifactId>QWCFPFileExplorer</artifactId>
-    <version>1.0.1.6</version>
-    <packaging>war</packaging>
-    <url>${application.url}</url>
+	<groupId>br.com.pix.qwcfp</groupId>
+	<artifactId>QWCFPFileExplorer</artifactId>
+	<version>1.0.1.6</version>
+	<packaging>war</packaging>
+	<url>${application.url}</url>
 
-    <name>QWCFPFileExplorer</name>
-    
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-            <distribution>manual</distribution>
-        </license>
-    </licenses>
-    <issueManagement>
-        <url>${application.url}/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
-    <scm>
-        <url>${application.url}</url>
-        <connection>scm:https://github.com/PadraoiX/QWCFPFileExplorer.git</connection>
-        <developerConnection>scm:https://github.com/PadraoiX/QWCFPFileExplorer.git</developerConnection>
-    </scm>
-    <developers>
-        <developer>
-            <email>anderson@pix.com.br</email>
-            <name>Anderson Oliveira</name>
-            <url>https://github.com/PadraoiX/QWCFPFileExplorer</url>
-            <id>QWCFPFileExplorer</id>
-        </developer>
-    </developers>
-    
-    <properties>
-        <application.url>https://github.com/PadraoiX/QWCFPFileExplorer</application.url>
-        <application.name>${project.artifactId}</application.name>
-        <application.version>${project.version}</application.version>
-        <development.team>PIX</development.team>
-        <contact.email>anderson</contact.email>
-        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!--  <glassfish.javax.faces.version>2.1.29</glassfish.javax.faces.version> -->
-        <glassfish.javax.faces.version>2.4.0</glassfish.javax.faces.version>
-        <primefaces.version>5.2</primefaces.version>
-        <!--  <spring.version>4.1.6.RELEASE</spring.version> -->
-        <spring.version>4.3.27.RELEASE</spring.version>
-        <spring.security.version>3.2.5.RELEASE</spring.security.version>
-        <logback.version>1.1.2</logback.version>
-        <slf4j.version>1.7.7</slf4j.version>
-        <skipTests>true</skipTests>
-    </properties>
-    
-    <repositories>
-        <repository>
-            <id>prime-repo</id>
-            <name>Prime Repo</name>
-            <url>http://repository.primefaces.org</url>
-        </repository>
+	<name>QWCFPFileExplorer</name>
 
-    	<!-- Adicionado pelo Anderson 7/5/20 -->
-        <repository>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>manual</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<email>anderson@pix.com.br</email>
+			<name>Anderson Oliveira</name>
+			<url>https://github.com/PadraoiX/QWCFPFileExplorer</url>
+			<id>QWCFPFileExplorer</id>
+		</developer>
+	</developers>
+
+	<properties>
+		<application.url>https://github.com/PadraoiX/QWCFPFileExplorer</application.url>
+		<application.name>${project.artifactId}</application.name>
+		<application.version>${project.version}</application.version>
+		<development.team>PIX</development.team>
+		<contact.email>anderson</contact.email>
+		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- <glassfish.javax.faces.version>2.1.29</glassfish.javax.faces.version> -->
+		<glassfish.javax.faces.version>2.4.0</glassfish.javax.faces.version>
+		<primefaces.version>5.2</primefaces.version>
+		<!-- <spring.version>4.1.6.RELEASE</spring.version> -->
+		<spring.version>4.3.27.RELEASE</spring.version>
+		<spring.security.version>3.2.5.RELEASE</spring.security.version>
+		<logback.version>1.1.2</logback.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<skipTests>true</skipTests>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+
+		<!-- Adicionado pelo Anderson 7/5/20 -->
+		<repository>
 			<id>jvnet-nexus-releases</id>
 			<name>jvnet-nexus-releases</name>
 			<url>https://maven.java.net/content/repositories/releases/</url>
 		</repository>
-	    <!-- FIM Adicionado pelo Anderson 7/5/20 -->
-    </repositories> 
-       
-    	<dependencies>
-    		<dependency>
-    			<groupId>javax.faces</groupId>
-    			<artifactId>jsf-api</artifactId>
-    			<version>2.2.20</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>com.sun.faces</groupId>
-    			<artifactId>jsf-impl</artifactId>
-    			<version>2.2.20</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jboss.modules</groupId>
-    			<artifactId>jboss-modules</artifactId>
-    			<version>1.5.1.Final</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>junit</groupId>
-    			<artifactId>junit</artifactId>
-    			<version>4.10</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-test</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>javax</groupId>
-    			<artifactId>javaee-web-api</artifactId>
-    			<version>7.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>javax</groupId>
-    			<artifactId>javaee-api</artifactId>
-    			<version>8.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>ch.qos.logback</groupId>
-    			<artifactId>logback-classic</artifactId>
-    			<version>${logback.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>ch.qos.logback</groupId>
-    			<artifactId>logback-core</artifactId>
-    			<version>${logback.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.slf4j</groupId>
-    			<artifactId>slf4j-api</artifactId>
-    			<version>${slf4j.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-core</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-web</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework</groupId>
-    			<artifactId>spring-webmvc</artifactId>
-    			<version>${spring.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework.security</groupId>
-    			<artifactId>spring-security-web</artifactId>
-    			<version>${spring.security.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.springframework.security</groupId>
-    			<artifactId>spring-security-config</artifactId>
-    			<version>${spring.security.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jasypt</groupId>
-    			<artifactId>jasypt</artifactId>
-    			<version>1.9.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jasypt</groupId>
-    			<artifactId>jasypt-spring31</artifactId>
-    			<version>1.9.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.jasypt</groupId>
-    			<artifactId>jasypt-springsecurity3</artifactId>
-    			<version>1.9.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.glassfish</groupId>
-    			<artifactId>javax.faces</artifactId>
-    			<version>${glassfish.javax.faces.version}</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.primefaces</groupId>
-    			<artifactId>primefaces</artifactId>
-    			<version>${primefaces.version}</version>
-    		</dependency>
-    		<!--  Treta -->
-    		<dependency>
-    			<groupId>org.apache.commons</groupId>
-    			<artifactId>commons-lang3</artifactId>
-    			<version>3.3.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>commons-io</groupId>
-    			<artifactId>commons-io</artifactId>
-    			<version>2.4</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>commons-fileupload</groupId>
-    			<artifactId>commons-fileupload</artifactId>
-    			<version>1.3.1</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>com.mpatric</groupId>
-    			<artifactId>mp3agic</artifactId>
-    			<version>0.8.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>commons-codec</groupId>
-    			<artifactId>commons-codec</artifactId>
-    			<version>1.9</version>
-    		</dependency>
+		<!-- FIM Adicionado pelo Anderson 7/5/20 -->
+	</repositories>
 
-    		<dependency>
-    			<groupId>javax.faces</groupId>
-    			<artifactId>javax.faces-api</artifactId>
-    			<version>2.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>javax.el</groupId>
-    			<artifactId>javax.el-api</artifactId>
-    			<version>3.0.0</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.glassfish</groupId>
-    			<artifactId>javax.el</artifactId>
-    			<version>3.0.0</version>
-    		</dependency>
-    	</dependencies>
+	<dependencies>
+		<!--  Não consegue baixar a dependência 
+			<dependency>
+				<groupId>javax.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>2.2.20</version>			
+			</dependency>
+		-->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.20</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.modules</groupId>
+			<artifactId>jboss-modules</artifactId>
+			<version>1.5.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt-spring31</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt-springsecurity3</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>${glassfish.javax.faces.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>${primefaces.version}</version>
+		</dependency>
+		<!-- Treta -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mpatric</groupId>
+			<artifactId>mp3agic</artifactId>
+			<version>0.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <compilerArguments>
-                        <endorseddirs>${endorsed.dir}</endorseddirs>
-                    </compilerArguments>
-                </configuration>
-            </plugin>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.6</version>
-            </plugin>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 
+		<!-- USADOS EM TEMPO DE BUILD -->
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+		</dependency>
 
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <port>8888</port>
-                    <httpsPort>443</httpsPort>
-                    <!--<contextFile>src/main/tomcat/tomcat-context-local.xml</contextFile>-->
-                    <!--Need https setup in order to test local SAML integration-->
-                    <keystoreFile>${basedir}/jetty-ssl.keystore</keystoreFile>
-                    <keystorePass>jetty8</keystorePass>
-                    <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
-                    <useSeparateTomcatClassLoader>true</useSeparateTomcatClassLoader>
-                    <path>/</path>
-                    <!--                         <tomcatLoggingFile>src/main/tomcat/logging.properties</tomcatLoggingFile> -->
-                    <!--<additionalConfigFilesDir>src/main/tomcat</additionalConfigFilesDir>-->
-                    <systemProperties>
-                        <!--                            
-                        <JAVA_OPTS>-Xms1024m -Xmx2048m -XX:PermSize=1024m -XX:MaxPermSize=2048m</JAVA_OPTS>
-                        <log.dir>/opt/logs</log.dir>
-                        <config.dir>/opt/config</config.dir>
-                        -->
-                    </systemProperties>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.glassfish</groupId>
-                        <artifactId>javax.faces</artifactId>
-                        <version>${glassfish.javax.faces.version}</version>
-                    </dependency>
-                </dependencies>			
-            </plugin>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<version>3.1.2</version>
+		</dependency>
 
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.0.5.v20130815</version>
-                <!-- This plugin currently doesn't like spaces in classpath so if you can't do jetty:run Create a junction to your maven repository (or just move it to 
-                the location below and put "localRepository" entry in your settings.xml in your %USERPROFILE%\.m2\repository directory. junction c:\opt\m2repo "%USERPROFILE%\.m2\repository" 
-                <localRepository>c:/opt/m2repo</localRepository> -->
-                <configuration>
-                    <stopPort>8889</stopPort>
-                    <stopKey>STOPJETTYPLEASE</stopKey>
-                    <useTestScope>false</useTestScope>
-                    <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
-                    <!-- Properties in webappconfig call methods on org.mortbay.jetty.webapp.WebAppContext -->
-                    <webAppConfig>
-                        <contextPath>/</contextPath>
-                        <tempDirectory>${project.build.directory}</tempDirectory>
-                        <!--                        <defaultsDescriptor>${basedir}/src/main/jetty/WEB-INF/webdefault.xml</defaultsDescriptor>
-                        <overrideDescriptor>${basedir}/src/main/jetty/WEB-INF/web-override.xml</overrideDescriptor>
-                        <jettyEnvXml>${basedir}/src/main/jetty/WEB-INF/jetty-env.xml</jettyEnvXml>-->
-                    </webAppConfig>
-                    <!--<jettyConfig>${basedir}/src/main/jetty/jetty.xml</jettyConfig>-->
-                    <systemProperties>
-                        <systemProperty>
-                            <name>jetty.host</name>
-                            <value>localhost</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>jetty.port</name>
-                            <value>8888</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>log.dir</name>
-                            <value>/opt/logs</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>config.dir</name>
-                            <value>/opt/config</value>
-                        </systemProperty>
-                    </systemProperties>
-                </configuration>
-                <dependencies>
-                    <!--                    <dependency>
-                        <groupId>oracle</groupId>
-                        <artifactId>ojdbc6</artifactId>
-                        <version>${oracle.jdbc}</version>
-                    </dependency>-->
-                    <dependency>
-                        <groupId>org.glassfish</groupId>
-                        <artifactId>javax.faces</artifactId>
-                        <version>${glassfish.javax.faces.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>                
-        </plugins>
-        
-        <filters>
-            <filter>src/main/resources/webexplorer.properties</filter>
-        </filters>
-        <!--
-            In order to use filters you must specify a resource directory and set filtering to true.
-        -->
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-    </build>
-    <description>Interface WEB de usuários, que permita entre outros, navegar e gerir objetos persistidos no QWCFP. Este módulo depende dum servidor de aplicação J2EE e faz uso de JSF 2.0 + PrimeFAces 5.2 + Web Service SOAP 1.1 + QWCFPWebService, acessando o um dos repositórios QWCFP na rede. Partindo da versão 1.0.0.2 os pacotes passam a referenciar QWCFP.</description>
-    <dependencyManagement>
-    </dependencyManagement>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.2.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>3.0.0-M4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
+		<dependency>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<!-- FIM == USADOS EM TEMPO DE BUILD -->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<compilerArguments>
+						<endorseddirs>${endorsed.dir}</endorseddirs>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M4</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>8888</port>
+					<httpsPort>443</httpsPort>
+					<!--<contextFile>src/main/tomcat/tomcat-context-local.xml</contextFile> -->
+					<!--Need https setup in order to test local SAML integration -->
+					<keystoreFile>${basedir}/jetty-ssl.keystore</keystoreFile>
+					<keystorePass>jetty8</keystorePass>
+					<warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+					<useSeparateTomcatClassLoader>true</useSeparateTomcatClassLoader>
+					<path>/</path>
+					<!-- <tomcatLoggingFile>src/main/tomcat/logging.properties</tomcatLoggingFile> -->
+					<!--<additionalConfigFilesDir>src/main/tomcat</additionalConfigFilesDir> -->
+					<systemProperties>
+						<!-- <JAVA_OPTS>-Xms1024m -Xmx2048m -XX:PermSize=1024m -XX:MaxPermSize=2048m</JAVA_OPTS> 
+							<log.dir>/opt/logs</log.dir> <config.dir>/opt/config</config.dir> -->
+					</systemProperties>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.glassfish</groupId>
+						<artifactId>javax.faces</artifactId>
+						<version>${glassfish.javax.faces.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.0.5.v20130815</version>
+				<!-- This plugin currently doesn't like spaces in classpath so if you 
+					can't do jetty:run Create a junction to your maven repository (or just move 
+					it to the location below and put "localRepository" entry in your settings.xml 
+					in your %USERPROFILE%\.m2\repository directory. junction c:\opt\m2repo "%USERPROFILE%\.m2\repository" 
+					<localRepository>c:/opt/m2repo</localRepository> -->
+				<configuration>
+					<stopPort>8889</stopPort>
+					<stopKey>STOPJETTYPLEASE</stopKey>
+					<useTestScope>false</useTestScope>
+					<webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+					<!-- Properties in webappconfig call methods on org.mortbay.jetty.webapp.WebAppContext -->
+					<webAppConfig>
+						<contextPath>/</contextPath>
+						<tempDirectory>${project.build.directory}</tempDirectory>
+						<!-- <defaultsDescriptor>${basedir}/src/main/jetty/WEB-INF/webdefault.xml</defaultsDescriptor> 
+							<overrideDescriptor>${basedir}/src/main/jetty/WEB-INF/web-override.xml</overrideDescriptor> 
+							<jettyEnvXml>${basedir}/src/main/jetty/WEB-INF/jetty-env.xml</jettyEnvXml> -->
+					</webAppConfig>
+					<!--<jettyConfig>${basedir}/src/main/jetty/jetty.xml</jettyConfig> -->
+					<systemProperties>
+						<systemProperty>
+							<name>jetty.host</name>
+							<value>localhost</value>
+						</systemProperty>
+						<systemProperty>
+							<name>jetty.port</name>
+							<value>8888</value>
+						</systemProperty>
+						<systemProperty>
+							<name>log.dir</name>
+							<value>/opt/logs</value>
+						</systemProperty>
+						<systemProperty>
+							<name>config.dir</name>
+							<value>/opt/config</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+				<dependencies>
+					<!-- <dependency> <groupId>oracle</groupId> <artifactId>ojdbc6</artifactId> 
+						<version>${oracle.jdbc}</version> </dependency> -->
+					<dependency>
+						<groupId>org.glassfish</groupId>
+						<artifactId>javax.faces</artifactId>
+						<version>${glassfish.javax.faces.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+
+		<filters>
+			<filter>src/main/resources/webexplorer.properties</filter>
+		</filters>
+		<!-- In order to use filters you must specify a resource directory and 
+			set filtering to true. -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+	<description>Interface WEB de usuários, que permita entre outros, navegar e gerir objetos persistidos no QWCFP. Este módulo depende dum servidor de aplicação J2EE e faz uso de JSF 2.0 + PrimeFAces 5.2 + Web Service SOAP 1.1 + QWCFPWebService, acessando o um dos repositórios QWCFP na rede. Partindo da versão 1.0.0.2 os pacotes passam a referenciar QWCFP.</description>
+	<dependencyManagement>
+	</dependencyManagement>
 </project>
