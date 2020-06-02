@@ -9,6 +9,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.apache.commons.io.FileUtils;
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.NodeCollapseEvent;
@@ -18,18 +21,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @RequestScoped
 public class MoveControlBean extends BaseControlBean {
     final static Logger logger = LoggerFactory.getLogger(MoveControlBean.class);
 
-    @ManagedProperty("#{applicationConstants}")
+    // @ManagedProperty("#{applicationConstants}")
+    @Inject
     private ApplicationConstants applicationConstants;
-    @ManagedProperty("#{moveBean}")
+    // @ManagedProperty("#{moveBean}")
+    @Inject
     private MoveBean moveBean;
-    @ManagedProperty("#{fileDirectoryService}")
+    // @ManagedProperty("#{fileDirectoryService}")
+    @Inject
     private FileDirectoryService fileDirectoryService;
-    @ManagedProperty("#{explorerBean}")
+    // @ManagedProperty("#{explorerBean}")
+    @Inject
     private ExplorerBean explorerBean;
 
     @Override

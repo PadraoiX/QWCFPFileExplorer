@@ -8,11 +8,13 @@ import java.util.Map;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
 import org.apache.commons.lang3.StringUtils;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ApplicationScoped
 public class ApplicationConstants {
 

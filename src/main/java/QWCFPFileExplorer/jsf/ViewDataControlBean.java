@@ -19,6 +19,8 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.imageio.ImageIO;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.commons.io.IOUtils;
 import org.primefaces.event.SelectEvent;
@@ -33,20 +35,25 @@ import QWCFPFileExplorer.service.FileDirectoryService;
 import QWCFPFileExplorer.util.FileUtil;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @RequestScoped
 public class ViewDataControlBean extends ExplorerControlBean {
 
     final static Logger logger = LoggerFactory.getLogger(ViewDataControlBean.class);
 
     private static final int SLIDE_SHOW_INTERVAL_IN_SEC = 5;
-    @ManagedProperty("#{fileDirectoryService}")
+    // @ManagedProperty("#{fileDirectoryService}")
+    @Inject
     private FileDirectoryService fileDirectoryService;
-    @ManagedProperty("#{mediaFileUtil}")
+    // @ManagedProperty("#{mediaFileUtil}")
+    @Inject
     private MediaFileUtil mediaFileUtil;
-    @ManagedProperty("#{viewDataBean}")
+    // @ManagedProperty("#{viewDataBean}")
+    @Inject
     private ViewDataBean viewDataBean;
-    @ManagedProperty(value = "#{param.fileId}")
+    // @ManagedProperty(value = "#{param.fileId}")
+    @Inject
     private String fileId;
 
     @Override

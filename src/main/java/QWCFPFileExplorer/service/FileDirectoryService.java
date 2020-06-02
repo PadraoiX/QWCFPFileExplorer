@@ -7,18 +7,23 @@ import java.util.List;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ApplicationScoped
 public class FileDirectoryService {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(FileDirectoryService.class);
 
     public static final String DEFAULT_ROOT_PATH = "C:\\";
-    @ManagedProperty("#{appProperties}")
+    // @ManagedProperty("#{appProperties}")
+    @Inject
     private AppProperties appProperties;
 
     public List<File> getDefaultPathList() {

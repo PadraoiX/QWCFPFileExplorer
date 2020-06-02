@@ -5,6 +5,7 @@ import java.net.URLEncoder;
 
 import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -22,11 +23,14 @@ public abstract class BaseBean {
     final static Logger logger = LoggerFactory.getLogger(BaseBean.class);
 
     public static final String ENCODING_SCHEME = "UTF-8";
-    @ManagedProperty("#{securityBean}")
+    // @ManagedProperty("#{securityBean}")
+    @Inject
     private SecurityBean securityBean;
-    @ManagedProperty("#{appProperties}")
+    // @ManagedProperty("#{appProperties}")
+    @Inject
     private AppProperties appProperties;
-    @ManagedProperty("#{applicationConstants}")
+    //@ManagedProperty("#{applicationConstants}")
+    @Inject
     private ApplicationConstants applicationConstants;
 
     public FacesContext getFacesContext() {

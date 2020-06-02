@@ -4,9 +4,11 @@ import QWCFPFileExplorer.jsf.BaseBean;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Named;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @SessionScoped
 public class MySessionBean extends BaseBean implements Serializable {
     private static final long serialVersionUID = 6659100794381030210L;

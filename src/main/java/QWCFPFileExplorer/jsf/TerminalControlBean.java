@@ -8,6 +8,9 @@ import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.apache.commons.io.input.ReversedLinesFileReader;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -15,7 +18,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @RequestScoped
 public class TerminalControlBean extends BaseControlBean {
     final static Logger logger = LoggerFactory.getLogger(TerminalControlBean.class);
@@ -37,7 +41,9 @@ public class TerminalControlBean extends BaseControlBean {
             return description;
         }
     }
-    @ManagedProperty("#{terminalBean}")
+    
+    // @ManagedProperty("#{terminalBean}")
+    @Inject
     private TerminalBean terminalBean;
 
     @Override

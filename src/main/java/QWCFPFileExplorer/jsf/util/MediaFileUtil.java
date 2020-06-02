@@ -6,11 +6,14 @@ import java.io.Serializable;
 import java.nio.file.Files;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ApplicationScoped
 public class MediaFileUtil implements Serializable {
     final static Logger logger = LoggerFactory.getLogger(MediaFileUtil.class);

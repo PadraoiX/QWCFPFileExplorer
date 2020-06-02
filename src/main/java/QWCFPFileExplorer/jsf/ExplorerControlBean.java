@@ -16,6 +16,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -34,17 +36,21 @@ import QWCFPFileExplorer.service.FileDirectoryService;
 import QWCFPFileExplorer.util.FileUtil;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @RequestScoped
 public class ExplorerControlBean extends BaseControlBean {
     final static Logger logger = LoggerFactory.getLogger(ExplorerControlBean.class);
 
     private static final int MINIMUM_SEARCH_LENGTH = 2;
-    @ManagedProperty("#{applicationConstants}")
+    // @ManagedProperty("#{applicationConstants}")
+    @Inject
     private ApplicationConstants applicationConstants;
-    @ManagedProperty("#{explorerBean}")
+    // @ManagedProperty("#{explorerBean}")
+    @Inject
     private ExplorerBean explorerBean;
-    @ManagedProperty("#{fileDirectoryService}")
+    // @ManagedProperty("#{fileDirectoryService}")
+    @Inject
     private FileDirectoryService fileDirectoryService;
     private final SimpleDateFormat sdf = new SimpleDateFormat(ApplicationConstants.FORMAT_TIMESTAMP);
 

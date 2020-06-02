@@ -7,9 +7,11 @@ import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ViewScoped
 public class ViewDataBean implements Serializable {
     private static final long serialVersionUID = 914970822058171434L;

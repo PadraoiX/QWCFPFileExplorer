@@ -10,16 +10,21 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.primefaces.model.TreeNode;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ViewScoped
 public class ExplorerBean implements Serializable {
 
     private static final long serialVersionUID = -3980094244475127787L;
 
-    @ManagedProperty("#{mediaFileUtil}")
+    //@ManagedProperty("#{mediaFileUtil}")
+    @Inject
     private MediaFileUtil mediaFileUtil;
     private TreeNode rootNode;
     private TreeNode selectedNode;

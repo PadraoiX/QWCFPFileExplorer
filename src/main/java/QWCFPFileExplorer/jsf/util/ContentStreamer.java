@@ -11,6 +11,7 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseId;
+import javax.inject.Named;
 import javax.servlet.ServletContext;
 
 import org.primefaces.model.DefaultStreamedContent;
@@ -19,7 +20,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ApplicationScoped
 /**
  * Should read this blog using p:graphicImage and f:param, it's a bit tricky

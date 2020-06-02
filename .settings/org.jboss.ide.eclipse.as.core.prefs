@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-org.jboss.ide.eclipse.as.core.singledeployable.deployableList=WebContent\n
+org.jboss.ide.eclipse.as.core.singledeployable.deployableList=target/QWCFPFileExplorer-1.0.2.0.war\n

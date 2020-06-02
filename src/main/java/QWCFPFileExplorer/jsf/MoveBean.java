@@ -7,11 +7,13 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
 
 import org.primefaces.model.TreeNode;
 
 @SuppressWarnings("deprecation")
-@ManagedBean
+// @ManagedBean
+@Named
 @ViewScoped
 public class MoveBean implements Serializable {
     private static final long serialVersionUID = 553241222920856765L;

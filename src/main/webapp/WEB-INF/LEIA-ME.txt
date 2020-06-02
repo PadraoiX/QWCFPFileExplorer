@@ -1,0 +1,65 @@
+Basically, that's indeed all you need to do provided that you're on a Java EE server already. 
+When on Tomcat, you'd need to manually install CDI first. Instructions for both Weld and 
+OpenWebBeans are detailed in the blog How to install CDI in Tomcat?
+
+The below gotchas need to be taken care of:
+
+While OmniFaces 2.x "officially" requires JSF 2.2, OmniFaces 2.0/2.1 is technically backwards 
+compatible with JSF 2.1 and should in TomEE's case work on TomEE 1.x with JSF 2.1 as well, but 
+OmniFaces 2.2 has a hard JSF 2.2 dependency (due to the new <o:viewAction> tag) and won't deploy 
+on TomEE 1.x without upgrading its MyFaces JSF implementation to a 2.2 compatible version, or 
+itself being upgraded to TomEE 7.x. See also OmniFaces Compatibility Matrix.
+
+When you deploy an EAR with multiple WARs with each its own OmniFaces library, then generally 
+all CDI functionality will work in only one WAR as the CDI context of a WAR-provided library is 
+incorrectly interpreted as EAR-wide. This is an oversight in CDI spec and yet to be fixed in a 
+future CDI version. See also OmniFaces Known Issues (CDI).
+
+When you want to use OmniFaces-provided CDI injection support in @FacesConverter or @FacesValidator, 
+and you're going to create/use a CDI 1.1 compatible beans.xml (and thus not a CDI 1.0 compatible one 
+or an empty one), then you need to make sure that you have explicitly set bean-discovery-mode="all" 
+in beans.xml. See also @FacesConverter showcase.
+
+When replacing @ManagedBean(eager=true), be aware that standard CDI has no direct equivalent for this. 
+You would use @Observes for this. OmniFaces offers @Eager annotation for the purpose. See also How to 
+configure a start up managed bean?
+
+When replacing @ManagedProperty in JSF 2.0/2.1/2.2, be aware that you can't inject #{param.xxx}, 
+#{cookie.xxx} and #{initParam.xxx} directly via @Inject alone, while that was just possible via 
+@ManagedProperty. OmniFaces offers respectively @Param, @Cookie and @ContextParam for the purpose. 
+Only in JSF 2.3 there's a new @javax.faces.annotation.ManagedProperty annotation which can be used 
+exactly the same way as original @javax.faces.bean.ManagedProperty which got deprecated since JSF 2.3.
+
+
+Dica de: https://developer.jboss.org/thread/277030
+
+CDI throws exceptions during deployment on Tomcat 8
+Esta pergunta foi respondida.
+
+arnieaustinarnieaustin 18/01/2018 18:33
+I have to create a new JSF/PrimeFaces application to run on Tomcat 8. I want to include CDI. I have 
+added the following jars:versions to the project: 
+
+javax.enterprise:cdi-api:2.0
+org.jboss.weld:weld-api:3.0.SP2
+org.jboss.weld:weld-core-impl:3.0.SP2
+org.jboss.weld.environment:weld-environment-common:3.0.SP2
+org.jboss.weld.module:weld-jsf:3.0.2.Final
+org.jboss.weld.servlet:weld-servlet-core:3.0.2.Final
+org.jboss.weld:weld-spi:3.0.SP2
+org.jboss.weld.module:weld-web:3.0.2.Final
+ 
+
+I only added weld-api and weld-servlet-core to my POM file; all the others came in as dependencies 
+and with out them I get many ClassNotFound exceptions.
+
+Yet when the application is deploying, it fails with strange errors internal to Weld as shown below. 
+Can some venture a guess as to what is going on?
+
+INFO: Initializing AtmosphereFramework
+
+Jan 18, 2018 10:48:26 AM org.apache.catalina.core.ContainerBase addChildInternal
+
+SEVERE: ContainerBase.addChild: start:
+
+org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/aamva-mock-ui-1.0.0]]
